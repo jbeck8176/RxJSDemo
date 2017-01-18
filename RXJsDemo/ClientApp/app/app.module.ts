@@ -2,29 +2,41 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UniversalModule } from 'angular2-universal';
 import { AppComponent } from './components/app/app.component'
+
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
+import { BasicsComponent } from './components/basics/basics.component';
+import { CachingComponent } from './components/caching/caching.component';
+import { DataSharingComponent } from './components/dataSharing/dataSharing.component';
+import { ElementEventsComponent } from './components/elementEvents/elementEvents.component';
+
+import { NameService } from './services/name.service';
 
 @NgModule({
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        BasicsComponent,
+        CachingComponent,
+        DataSharingComponent,
+        ElementEventsComponent
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'basics', component: BasicsComponent },
+            { path: 'caching', component: CachingComponent },
+            { path: 'datasharing', component: DataSharingComponent },
+            { path: 'elementevents', component: ElementEventsComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        NameService
     ]
 })
 export class AppModule {

@@ -1,0 +1,20 @@
+<h1>Caching</h1>
+<p>In this component we will take a look at caching api calls the rxjs way!</p>
+
+
+<p *ngIf="!names"><em>Loading...</em></p>
+
+<table class='table' *ngIf="names">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let name of names">
+            <td>{{ name }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="reloadNames()">Reload Names</button>
