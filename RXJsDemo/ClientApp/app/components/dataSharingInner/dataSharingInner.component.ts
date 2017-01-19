@@ -15,6 +15,10 @@ export class DataSharingInnerComponent {
     }
 
     ngOnInit() {
-        this.nameService.getAllNamesNoCache().subscribe((names)=>this.names = names);
+        this.nameService.names.subscribe((names)=>this.names = names);
+    }
+
+    addName(name: string): void {
+        this.names.push(name);
     }
 }

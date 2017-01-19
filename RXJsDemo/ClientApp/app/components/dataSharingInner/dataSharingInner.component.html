@@ -16,3 +16,7 @@
     </tbody>
 </table>
 
+<p *ngIf="names">
+	Add Name: <input #addNameInput type="text" (keyup.enter)="addName(addNameInput.value); addNameInput.value = '';">
+</p>
+
