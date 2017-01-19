@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Observable } from 'rxjs/Rx';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { NameService } from './../../services/name.service';
 
 @Component({
-    selector: 'basics',
-    template: require('./basics.component.html')
+    selector: 'dataSharingInner',
+    template: require('./dataSharingInner.component.html')
 })
-export class BasicsComponent {
+export class DataSharingInnerComponent {
+    @Input() title: string;
+
     names: string[];
 
     constructor(private nameService: NameService) {

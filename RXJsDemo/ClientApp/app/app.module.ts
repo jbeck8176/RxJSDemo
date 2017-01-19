@@ -8,7 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { BasicsComponent } from './components/basics/basics.component';
 import { CachingComponent } from './components/caching/caching.component';
 import { DataSharingComponent } from './components/dataSharing/dataSharing.component';
+import { DataSharingInnerComponent } from './components/dataSharingInner/dataSharingInner.component';
 import { ElementEventsComponent } from './components/elementEvents/elementEvents.component';
+import { UnittestingComponent } from './components/unittesting/unittesting.component';
 
 import { NameService } from './services/name.service';
 
@@ -21,7 +23,9 @@ import { NameService } from './services/name.service';
         BasicsComponent,
         CachingComponent,
         DataSharingComponent,
-        ElementEventsComponent
+        DataSharingInnerComponent,
+        ElementEventsComponent,
+        UnittestingComponent
     ],
     imports: [
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
@@ -32,6 +36,7 @@ import { NameService } from './services/name.service';
             { path: 'caching', component: CachingComponent },
             { path: 'datasharing', component: DataSharingComponent },
             { path: 'elementevents', component: ElementEventsComponent },
+            { path: 'unittesting', component: UnittestingComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],

@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RXJsDemo.Controllers
@@ -11,7 +9,7 @@ namespace RXJsDemo.Controllers
     {
         private static string[] _searchableList = new[]
         {
-            "Jeff","John","Mark","Steve","Brandon","Josh","Scott","Adam","Darrel","Dan"
+            "Jeff","John","Mark","Steve","Brandon","Josh","Scott","Adam","Darrel","Dan","Jamie"
         };
 
         [HttpGet("[action]")]

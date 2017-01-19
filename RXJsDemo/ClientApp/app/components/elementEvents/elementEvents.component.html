@@ -1,2 +1,18 @@
 <h1>Element events</h1>
 <p>In this component we will take a look at how to handle element events the RXJs way</p>
+
+<div>
+	<h2>Direct one-way binding</h2>
+	Input: <input  #directOneWay type="text" name="fname" (keyup)="directInputChange(directOneWay.value)"><br>
+	Output: {{directInput}}
+</div>
+
+
+
+
+<!--<div>
+	<h2>Observable one-way binding</h2>
+	Input: <input  #observableOneWay type="text" name="fname" (keyup)="observableInputChangesSbj$.next(observableOneWay.value)"><br>
+	Output: {{observableInput}}<br>
+	Dirty: {{dirtyFlag}}
+</div>-->
