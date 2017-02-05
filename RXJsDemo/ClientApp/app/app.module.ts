@@ -10,6 +10,7 @@ import { BasicsComponent } from './components/basics/basics.component';
 import { CachingComponent } from './components/caching/caching.component';
 import { DataSharingComponent } from './components/dataSharing/dataSharing.component';
 import { DataSharingInnerComponent } from './components/dataSharingInner/dataSharingInner.component';
+import { DataSharingInnerDiffComponent } from './components/dataSharingInnerDiff/dataSharingInnerDiff.component';
 import { ElementEventsComponent } from './components/elementEvents/elementEvents.component';
 import { UnittestingComponent } from './components/unittesting/unittesting.component';
 
@@ -27,6 +28,7 @@ import { NameService } from './services/name.service';
         CachingComponent,
         DataSharingComponent,
         DataSharingInnerComponent,
+        DataSharingInnerDiffComponent,
         ElementEventsComponent,
         UnittestingComponent
     ],

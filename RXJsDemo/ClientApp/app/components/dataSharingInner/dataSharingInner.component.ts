@@ -15,10 +15,14 @@ export class DataSharingInnerComponent {
     }
 
     ngOnInit() {
-        this.nameService.names.subscribe((names)=>this.names = names);
+        this.nameService.names.subscribe((names)=>this.names = [...names]);
     }
 
     addName(name: string): void {
         this.names.push(name);
+    }
+
+    save(): void {
+        this.nameService.updateNames(this.names);
     }
 }

@@ -15,6 +15,6 @@ export class BasicsComponent {
     }
 
     ngOnInit() {
-        this.nameService.getAllNamesNoCache().subscribe((names)=>this.names = names);
+        this.nameService.getAllNamesNoCache().subscribe((names) => this.names = names);
     }
 }

@@ -17,6 +17,7 @@
 </table>
 
 <p *ngIf="names">
-	Add Name: <input #addNameInput type="text" (keyup.enter)="addName(addNameInput.value); addNameInput.value = '';">
+	Add Name: <input #addNameInput type="text" (keyup.enter)="addName(addNameInput.value); addNameInput.value = '';"><br><br>
+    <button (click)="save()">SAVE</button>
 </p>
 

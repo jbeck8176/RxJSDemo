@@ -7,8 +7,6 @@ import { NameService } from './../../services/name.service';
     template: require('./dataSharing.component.html')
 })
 export class DataSharingComponent {
-    names: string[];
-    namesSearch: string[];
 
     constructor(private nameService: NameService) {
     }

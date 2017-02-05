@@ -3,13 +3,20 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
+
 export class NameService {
 	private baseUrl: string = '/api/name';
+
+	private namesCache: Observable<string[]>;
 
 	constructor(private http: Http) { }
 
 	get names(): Observable<string[]> {
 		return this.getAllNamesNoCache();
+	}
+
+	updateNames(names:string[]): void {
+
 	}
 
 	getAllNamesNoCache(): Observable<string[]> {
@@ -29,23 +36,14 @@ export class NameService {
 
 
 
-	// private nameCache: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
-	// private nameCacheLoaded: boolean = false;
-
-// refreshNameCache(): void {
-// 		this.getAllNamesNoCache().subscribe((names) => {
-// 			this.nameCache.next(names);
-// 		});
-// 	}
-
-// get names(): BehaviorSubject<string[]> {
-// 		if (!this.nameCacheLoaded) {
-// 			this.getAllNamesNoCache().subscribe((names) => {
-// 				this.nameCache.next(names);
-// 				this.nameCacheLoaded = true;
-// 			}
-// 			);
+// get names(): Observable<string[]> {
+// 		if (!this.namesCache) {
+// 			this.namesCache = this.buildNameCache();
 // 		}
-
-// 		return this.nameCache;
+// 		return this.namesCache;
 // 	}
+
+
+	// private BuildNameCache(): Observable<string[]> {
+	// 	return this.getAllNamesNoCache().publishReplay(1).refCount();
+	// }
