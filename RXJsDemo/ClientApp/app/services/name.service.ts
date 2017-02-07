@@ -45,5 +45,5 @@ export class NameService {
 
 
 	// private BuildNameCache(): Observable<string[]> {
-	// 	return this.getAllNamesNoCache().publishReplay(1).refCount();
+	// 	return this.getAllNamesNoCache().publishBehavior([]).refCount();
 	// }

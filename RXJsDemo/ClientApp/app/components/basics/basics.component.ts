@@ -15,6 +15,10 @@ export class BasicsComponent {
     }
 
     ngOnInit() {
-        this.nameService.getAllNamesNoCache().subscribe((names) => this.names = names);
+        this.nameService.getAllNamesNoCache().subscribe(
+            (names) => this.names = names,
+            (error) => console.log('error', error),
+            () => console.log('completed api request')
+        );
     }
 }
