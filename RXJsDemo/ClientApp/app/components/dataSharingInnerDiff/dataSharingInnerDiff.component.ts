@@ -17,8 +17,4 @@ export class DataSharingInnerDiffComponent {
     ngOnInit() {
         this.nameService.names.subscribe((names) => this.namesToShow = [...names]);
     }
-
-    addNameDiff(name: string): void {
-        this.namesToShow.push(name);
-    }
 }
