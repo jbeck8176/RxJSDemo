@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<p>This component uses the name data service to pull the data from the api</p>
+
+<p *ngIf="!namesToShow"><em>Loading...</em></p>
+
+<table class='table' *ngIf="namesToShow">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let name of namesToShow">
+            <td>{{ name }}</td>
+        </tr>
+    </tbody>
+</table>
+

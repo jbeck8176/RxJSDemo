@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<p>This component uses the name data service to pull the data from the api</p>
+
+<p *ngIf="!names"><em>Loading...</em></p>
+
+<table class='table' *ngIf="names">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let name of names">
+            <td>{{ name }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p *ngIf="names">
+	Add Name: <input #addNameInput type="text" (keyup.enter)="addName(addNameInput.value); addNameInput.value = '';"><br><br>
+    <button (click)="save()">SAVE</button>
+</p>
+

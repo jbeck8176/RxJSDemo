@@ -15,8 +15,8 @@ export class NameService {
 		return this.getAllNamesNoCache();
 	}
 
-	updateNames(names:string[]): void {
-
+	updateNames(names: string[]): void {
+		console.log('update triggered', names);
 	}
 
 	getAllNamesNoCache(): Observable<string[]> {

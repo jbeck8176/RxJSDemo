@@ -11,6 +11,9 @@ import { CachingComponent } from './components/caching/caching.component';
 import { DataSharingComponent } from './components/dataSharing/dataSharing.component';
 import { DataSharingInnerComponent } from './components/dataSharingInner/dataSharingInner.component';
 import { DataSharingInnerDiffComponent } from './components/dataSharingInnerDiff/dataSharingInnerDiff.component';
+import { DataSharingComponentStatless } from './components/dataSharingStateless/dataSharing/dataSharing.component';
+import { DataSharingInnerComponentStatless } from './components/dataSharingStateless/dataSharingInner/dataSharingInner.component';
+import { DataSharingInnerDiffComponentStatless } from './components/dataSharingStateless/dataSharingInnerDiff/dataSharingInnerDiff.component';
 import { ElementEventsComponent } from './components/elementEvents/elementEvents.component';
 import { UnittestingComponent } from './components/unittesting/unittesting.component';
 
@@ -29,6 +32,9 @@ import { NameService } from './services/name.service';
         DataSharingComponent,
         DataSharingInnerComponent,
         DataSharingInnerDiffComponent,
+        DataSharingComponentStatless,
+        DataSharingInnerComponentStatless,
+        DataSharingInnerDiffComponentStatless,
         ElementEventsComponent,
         UnittestingComponent
     ],
@@ -41,6 +47,7 @@ import { NameService } from './services/name.service';
             { path: 'basics', component: BasicsComponent },
             { path: 'caching', component: CachingComponent },
             { path: 'datasharing', component: DataSharingComponent },
+            { path: 'datasharingstatless', component: DataSharingComponentStatless },
             { path: 'elementevents', component: ElementEventsComponent },
             { path: 'unittesting', component: UnittestingComponent },
             { path: '**', redirectTo: 'home' }

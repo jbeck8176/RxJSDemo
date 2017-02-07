@@ -4,18 +4,17 @@
 
 <div>
 	<div class="col-md-6">
-		<dataSharingInner
-			title="Inner Component 1">
-		</dataSharingInner>
+		<dataSharingInnerStatless
+			title="Inner Component 1"
+			[names]="names"
+			(nameChanged$)="namesChanged($event)">
+		</dataSharingInnerStatless>
 	</div>
 	<div class="col-md-6">
-		<dataSharingInnerDiff
-			title="Inner Component 2">
-		</dataSharingInnerDiff>
+		<dataSharingInnerDiffStatless
+			title="Inner Component 2"
+			[namesToShow]="names">
+		</dataSharingInnerDiffStatless>
 	</div>
 </div>
-<br><br>
-<a [routerLink]="['/datasharingstatless']">
-	<span class='glyphicon glyphicon-share'></span> Data sharing the right way
-</a>
 
