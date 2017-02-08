@@ -44,9 +44,9 @@ export class PromiseVsObservableComponent {
     subscribe(): void {
         let subsctiption = this.observableTest.subscribe(x => console.log(x));
 
-        // setTimeout(function() {
-        //     subsctiption.unsubscribe();
-        // }, 500);
+        setTimeout(function() {
+            subsctiption.unsubscribe();
+        }, 500);
 
     }
 }

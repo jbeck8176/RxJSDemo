@@ -1,22 +1,36 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable()
 
 export class NameService {
 	private baseUrl: string = '/api/name';
 
-	private namesCache: Observable<string[]>;
+	private namesCache: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+	private hasCache: false;
 
 	constructor(private http: Http) { }
 
+	// get names(): Observable<string[]> {
+
+	// 	return this.getAllNamesNoCache();
+	// }
+
 	get names(): Observable<string[]> {
-		return this.getAllNamesNoCache();
+		if (!this.hasCache) {
+			this.BuildNameCache();
+		}
+		return this.namesCache;
+	}
+
+	private BuildNameCache(): void {
+		this.getAllNamesNoCache().subscribe((data)=>this.namesCache.next(data));
 	}
 
 	updateNames(names: string[]): void {
 		console.log('update triggered', names);
+		this.namesCache.next(names);
 	}
 
 	getAllNamesNoCache(): Observable<string[]> {
