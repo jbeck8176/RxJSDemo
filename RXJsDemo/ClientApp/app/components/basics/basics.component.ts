@@ -14,11 +14,17 @@ export class BasicsComponent {
     constructor(private nameService: NameService) {
     }
 
-    ngOnInit() {
+    ngOnInit(){
+        this.thisIsGonnaBreak();
+    }
+    
+    thisIsGonnaBreak() {
         this.nameService.getAllNamesNoCache().subscribe(
             (names) => this.names = names,
             (error) => console.log('error', error),
             () => console.log('completed api request')
         );
+        
+        console.log('this is another test');
     }
 }
